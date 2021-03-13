@@ -10,9 +10,12 @@
     width: 25%;
     background-color: wheat;
 }
+#board .sidebar.links-sidebar {
+    padding-top: 3em;
+}
 #board .sidebar .sidebar-link {
     color: rgba(0, 0, 0, 0.75);
-    font-weight: 500;
+    font-weight: 600;
     display: block;
     background-color: #efefef;
     padding: 10px;
@@ -20,6 +23,7 @@
     text-decoration: none;
     text-align: center;
     font-size: 110%;
+    font-family: 'Montserrat', sans-serif;
 }
 #board .sidebar .sidebar-link:hover {
     text-decoration: none;
@@ -80,4 +84,45 @@
 }
 .game-toggler-wrapper {
     text-align: center;
+}
+
+#footer {
+    position: absolute;
+    bottom: 6em;
+    right: 1.6%;
+    max-width: 400px;
+    background-color: whitesmoke;
+    padding: 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+.overlay-on-mobile {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding: 2em;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;  
+}
+.overlay-on-mobile .github-btn-wrapper {
+    margin-top: 6em;
+}
+.overlay-on-mobile .github-btn {
+    border-radius: 14px;
+    padding: 14px 22px;
+    text-align: center;
+    color: white;
+    background-color: darkred;
+}
+@media screen and (min-width: 769px) {
+    .overlay-on-mobile {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    #board {
+        display: none;
+    }
 }

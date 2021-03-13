@@ -48,18 +48,18 @@ class Game {
         this.box = 32; // size of individual square unit of Snake in pixels
         
         this.snake = new Snake(this.box);
-        this.snake_color = "green";
+        this.snake_color = "red";
 
         this.food = {
             x: Math.floor(Math.random() * 15 + 1) * this.box,
             y: Math.floor(Math.random() * 15 + 1) * this.box
         };
-        this.food_color = "black";
+        this.food_color = "darkgreen";
 
         app.game_state_toggle_text = "Pause";
         this.gameLoop = setInterval(() => {
             this.start();
-        }, 100);
+        }, 110);
 
         document.addEventListener("keydown", e => this.updateSnakePosition(e));
     }
@@ -91,7 +91,15 @@ class Game {
     }
 
     updateSnakePosition({ keyCode }) {
-        this.snake.changeDirection(keyCode);
+        switch (keyCode) {
+            case 32:
+                this.toggleGameState();
+                break;
+        
+            default:
+                this.snake.changeDirection(keyCode);
+                break;
+        }
     }
 
     start() {
@@ -111,6 +119,7 @@ class Game {
 
         this.snake.snake = snake;
 
+        this.gameOn = true;
         this.createBG("white");
         this.drawSnake();
         this.drawFood();
@@ -187,7 +196,21 @@ const VIEW = `
             <button onclick="game.toggleGameState()" class="game-state-toggler">
                 ${app.game_state_toggle_text}
             </button>
+            <div id="footer">
+                Made with ❤️ <br />
+                Icheka Ozuru (@c0debeast_)
+            </div>
         </div>
+    </div>
+</div>
+<div class="overlay-on-mobile">
+    <h1>
+    😞 <br />
+    Unfortunately, we do not support mobile browsers at this time.
+    Switch to desktop to play Snake Game-o.
+    </h1>
+    <div class="github-btn-wrapper">
+        <a class="github-btn" href="https://github.com/Icheka/snake-game-using-javascript">View the code on GitHub</a>
     </div>
 </div>
 `;
@@ -203,7 +226,7 @@ class Sidebar {
             },
             GitHub: {
                 name: "View the source code on GitHub",
-                link: ""
+                link: "https://github.com/Icheka/snake-game-using-javascript"
             }
         };
     }
