@@ -1,0 +1,83 @@
+#board {
+    width: 98vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+}
+#board .sidebar {
+    width: 25%;
+    background-color: wheat;
+}
+#board .sidebar .sidebar-link {
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: 500;
+    display: block;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 1em 6px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 110%;
+}
+#board .sidebar .sidebar-link:hover {
+    text-decoration: none;
+    background-color: yellowgreen;
+    color: white;
+}
+#board .app-wrapper {
+    width: 60%;
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+#board .app-wrapper canvas {
+    display: block;
+    margin: auto;
+}
+
+#board .app-title {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6em;
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#board .app-title:hover {
+    background-color: red;
+    color: white;
+    transition: all linear 300ms;
+}
+#board .meta-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-state-toggler {
+    background-color: rgb(236, 14, 14);
+    color: white;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 110%;
+    border: 0px;
+    cursor: pointer;
+}
+.game-state-toggler:hover {
+    background-color: rgb(187, 9, 9);
+}
+.game-state-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.game-toggler-wrapper {
+    text-align: center;
+}
